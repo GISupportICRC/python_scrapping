@@ -43,14 +43,16 @@ with open(outfile, 'w+') as csvfile:
     for i in item2:
         info = str(i)
         soup3 = BeautifulSoup(info)
-
+        
+        #Finally getting the values here
         title  = soup3.find_all('title')
         url = soup3.find_all('guid')
         desc = soup3.find_all('description')
         pubdate = soup3.find_all('pubdate')
         lat  = soup3.find_all('geo:lat')
         lng = soup3.find_all('geo:long')
-
+    
+        #boring data cleaning.. Maybe a better way to do it ?
         title_clean = str(title).replace('<title>','').replace('</title>','').replace('[','').replace(']','')
         url_clean = str(url).replace('<guid ispermalink="false">','').replace('</guid>','').replace('[','').replace(']','')
         desc_clean =str(desc).replace('<description>','').replace('</description>','').replace('[','').replace(']','')
