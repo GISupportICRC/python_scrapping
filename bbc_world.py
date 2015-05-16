@@ -5,12 +5,13 @@ import requests
 
 outfile = 'bbc_world.csv'
 
-# To do Hide the user for the geoname API
+# To do :
+# Hide the user for the geoname API
 # geonameuser = raw_input('ICRC username')
 # icrcopassist
 
-# Create a new file for everyday !
 # Get the country name based on spatial join with countries geojson.
+# Create a new file for everyday share it on Git ?
 
 with open(outfile, 'w+') as csvfile:
     fieldnames = ['title','url','desc','pubdate','lat','lng']
