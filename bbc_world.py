@@ -9,6 +9,8 @@ outfile = 'bbc_world.csv'
 # Hide the user for the geoname API
 # geonameuser = raw_input('ICRC username')
 # icrcopassist
+#pour geoloc les coordinates
+#http://api.geonames.org/countryCode?lat=47.03&lng=10.2&username=demo 
 
 # Create a new file for everyday !
 # Get the country name based on spatial join with countries geojson.
