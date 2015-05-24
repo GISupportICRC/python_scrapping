@@ -53,7 +53,7 @@ with open(outfile, 'wb') as csvfile:
         lat  = soup3.find_all('geo:lat')
         lng = soup3.find_all('geo:long')
 
-        title_clean = str(title).replace('<title>','').replace('</title>','').replace('[','').replace(']','')
+        title_clean = str(title).replace('<title>','').replace('</title>','').replace('[','').replace(']','').replace(',','')
         url_clean = str(url).replace('<guid ispermalink="false">','').replace('</guid>','').replace('[','').replace(']','')
         desc_clean =str(desc).replace('<description>','').replace('</description>','').replace('[','').replace(']','').replace('"','').replace(',','')
         pubdate_clean = str(pubdate).replace('<pubdate>','').replace('</pubdate>','').replace('[','').replace(']','').replace(',','')
