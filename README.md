@@ -8,9 +8,9 @@
 ``` 
 C:\Python27\Scripts\easy_install.exe pip
 ```
-*Now you should have pip installed
-*Let's download beautifulSoup
-*You're still in the Script directory. Write :
+* Now you should have pip installed
+* Let's download beautifulSoup
+* You're still in the Script directory. Write :
 ```
 pip.exe install beautifulsoup4
 ```
