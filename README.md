@@ -17,3 +17,17 @@ C:\Python27\Scripts\easy_install.exe pip
 ```
 pip.exe install beautifulsoup4
 ```
+### How to install Request:
+* In the Scripts directory
+```
+pip.exe install requests
+```
+### How to install lxml:
+* In the Scripts directory
+```
+easy_install.exe lxml
+```
+* And maybe you will need to run 
+```
+pip.exe install --upgrade lxml
+```
