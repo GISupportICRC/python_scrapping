@@ -56,7 +56,7 @@ with open(outfile, 'wb') as csvfile:
         title_clean = str(title).replace('<title>','').replace('</title>','').replace('[','').replace(']','')
         url_clean = str(url).replace('<guid ispermalink="false">','').replace('</guid>','').replace('[','').replace(']','')
         desc_clean =str(desc).replace('<description>','').replace('</description>','').replace('[','').replace(']','').replace('"','')
-        pubdate_clean = str(pubdate).replace('<pubdate>','').replace('</pubdate>','').replace('[','').replace(']','')
+        pubdate_clean = str(pubdate).replace('<pubdate>','').replace('</pubdate>','').replace('[','').replace(']','').replace(',','')
         lat_clean = str(lat).replace('<geo:lat>','').replace('</geo:lat>','').replace('[','').replace(']','')
         lng_clean = str(lng).replace('<geo:long>','').replace('</geo:long>','').replace('[','').replace(']','')
 
