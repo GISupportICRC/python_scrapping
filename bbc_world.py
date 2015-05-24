@@ -16,7 +16,7 @@ outfile = 'bbc_world.csv'
 # Create a new file for everyday !
 # Get the country name based on spatial join with countries geojson.
 
-with open(outfile, 'w+') as csvfile:
+with open(outfile, 'wb') as csvfile:
     fieldnames = ['title','url','desc','pubdate','lat','lng']
     writer = csv.DictWriter(csvfile, delimiter=';',fieldnames=fieldnames)
 
