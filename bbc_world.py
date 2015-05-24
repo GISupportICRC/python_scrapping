@@ -18,7 +18,7 @@ outfile = 'bbc_world.csv'
 
 with open(outfile, 'wb') as csvfile:
     fieldnames = ['title','url','desc','pubdate','lat','lng']
-    writer = csv.DictWriter(csvfile, delimiter=';',fieldnames=fieldnames)
+    writer = csv.DictWriter(csvfile, delimiter=',',fieldnames=fieldnames)
 
     writer.writeheader()
     r  = requests.get("http://api.geonames.org/rssToGeoRSS?feedUrl=http://news.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml&username=icrcopassist")
