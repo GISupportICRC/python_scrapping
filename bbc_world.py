@@ -21,7 +21,6 @@ with open(outfile, 'wb') as csvfile:
     writer = csv.DictWriter(csvfile, delimiter=';',fieldnames=fieldnames)
 
     writer.writeheader()
-    #writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
     r  = requests.get("http://api.geonames.org/rssToGeoRSS?feedUrl=http://news.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml&username=icrcopassist")
     data = r.text
 
