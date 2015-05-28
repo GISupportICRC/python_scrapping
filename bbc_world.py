@@ -7,24 +7,23 @@ import requests
 outfile = 'bbc_world.csv'
 
 with open(outfile, 'wb') as csvfile:
-    
-	fieldnames = ['title','url','desc','pubdate','lat','lng']
+    fieldnames = ['title','url','desc','pubdate','lat','lng']
     writer = csv.DictWriter(csvfile, delimiter=',',fieldnames=fieldnames)
 
     writer.writeheader()
     r  = requests.get("http://api.geonames.org/rssToGeoRSS?feedUrl=http://news.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml&username=icrcopassist")
     data = r.text
-	
+
     soup = BeautifulSoup(r.content, ['lxml', 'xml'])
     soup_list = soup.findChildren()
-	
-	#Getting a clean file out off the rss mess
+
+    #Getting a clean file out off the rss mess
     for i, element in enumerate(soup):
         elmt_item = element.findChildren()
         if len(elmt_item) >1:
             # a clean file !
             itm1 = elmt_item[0]
-    
+
 	#Working now on this clean file
 	itm = str(itm1)
     soup2 = BeautifulSoup(itm)
@@ -40,7 +39,7 @@ with open(outfile, 'wb') as csvfile:
         pubdate = soup3.find_all('pubdate')
         lat  = soup3.find_all('geo:lat')
         lng = soup3.find_all('geo:long')
-		
+
 		#Cleaning the result
         title_clean = str(title).replace('<title>','').replace('</title>','').replace('[','').replace(']','').replace(',','')
         url_clean = str(url).replace('<guid ispermalink="false">','').replace('</guid>','').replace('[','').replace(']','')
@@ -50,6 +49,6 @@ with open(outfile, 'wb') as csvfile:
         lng_clean = str(lng).replace('<geo:long>','').replace('</geo:long>','').replace('[','').replace(']','')
 
         #Write the code to get the country here !
-		
+
 		#For each row:
         writer.writerow({'desc':desc,'title':title_clean,'url':url_clean,'desc':desc_clean,'pubdate':pubdate_clean,'lat':lat_clean,'lng':lng_clean})
