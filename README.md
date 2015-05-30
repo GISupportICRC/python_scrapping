@@ -1,12 +1,12 @@
 [![Join the chat at https://gitter.im/openterrain/openterrain](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pierrelorioux/python_scrapping)
 
 ### How to install easy_install:
-* Go to  https://pypi.python.org/pypi/setuptools and download setuptools-15.2.tar.gz (md5) 
-* Unzip the file and run setup file 
+* Go to  https://pypi.python.org/pypi/setuptools and download setuptools-15.2.tar.gz (md5)
+* Unzip the file and run setup file
 
 ### How to install pip:
 * Go to the Scripts directory
-``` 
+```
 C:\Python27\Scripts\easy_install.exe pip
 ```
 * Now you should have pip installed
@@ -27,7 +27,7 @@ pip.exe install requests
 ```
 easy_install.exe lxml
 ```
-* And maybe you will need to run 
+* And maybe you will need to run
 ```
 pip.exe install --upgrade lxml
 ```
