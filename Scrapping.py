@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import lxml
 import csv
 import urllib2
+import time
 
 outfile = 'bbc_world.csv'
 
