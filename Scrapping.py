@@ -7,7 +7,7 @@ import urllib2
 outfile = 'bbc_world.csv'
 
 with open(outfile, 'wb') as csvfile:
-    fieldnames = ['title','url','desc','pubdate','lat','lng','country']
+    fieldnames = ['country','title','desc','pubdate','url','lat','lng']
     writer = csv.DictWriter(csvfile, delimiter=',',fieldnames=fieldnames)
 
     writer.writeheader()
@@ -18,7 +18,7 @@ with open(outfile, 'wb') as csvfile:
     #soup_list = data.findChildren()
 
     item2 = soup.find_all("item")
-   
+
     for i in item2:
         itm =str(i)
         soup3 = BeautifulSoup(itm)
@@ -28,7 +28,7 @@ with open(outfile, 'wb') as csvfile:
         pubdate = soup3.find('pubdate')
         lat  = soup3.find('geo:lat')
         lng= soup3.find('geo:long')
- 
+
 	#Cleaning the result
         title_clean = str(title).replace('<title>','').replace('</title>','').replace('[','').replace(']','').replace(',','')
         url_clean = str(url).replace('<guid ispermalink="false">','').replace('</guid>','').replace('[','').replace(']','')
